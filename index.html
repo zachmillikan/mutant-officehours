@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html np-app="mutantApp">
+<html ng-app="mutantApp">
   <head>
     <meta charset="utf-8">
     <title>Mutant Office Hours</title>
@@ -7,6 +7,8 @@
   </head>
   <body>
     This is the body of the HTML
+
+    <div ui-view class="row"></div>
 
     <!-- Third-party scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -18,5 +20,9 @@
 
     <!-- Main app module -->
     <script src="app/app.module.js"></script>
+
+    <!-- Home module -->
+    <script src="app/home/home.module.js"></script>
+    <script src="app/home/config.route.js"></script>
   </body>
 </html>
