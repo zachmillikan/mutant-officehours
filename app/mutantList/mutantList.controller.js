@@ -10,12 +10,14 @@
   function MutantListController($firebaseArray) {
     var vm = this;
     var mutantsRef = firebase.database().ref().child('mutants');
+    var textsRef = firebase.database().ref().child('text');
 
     vm.addMutant = addMutant;
     vm.mutants = $firebaseArray(mutantsRef);
     vm.newMutant = new Mutant();
     vm.deleteMutant = deleteMutant;
     vm.toggleComplete = toggleComplete;
+    vm.sendText = sendText;
 
 
     function Mutant() {
@@ -36,6 +38,17 @@
     }
 
     function toggleComplete(mutant) {
+      vm.mutants.$save(mutant);
+    }
+
+    function sendText(mutant) {
+      var newText = {
+        name: mutant.name,
+        topic: mutant.topic,
+        phoneNumber: mutant.phone
+      };
+      textsRef.push(newText);
+      mutant.notified = true;
       vm.mutants.$save(mutant);
     }
   }
