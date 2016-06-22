@@ -5,10 +5,22 @@
     .module('mutantApp.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = [];
+  AuthController.$inject = ['$firebaseAuth'];
 
-  function AuthController() {
+  function AuthController($firebaseAuth) {
     var vm = this;
+    var auth = $firebaseAuth();
 
+    mv.register = register;
+
+    vm.user = {
+      email: '',
+      password: ''
+    }
+
+    function register(user) {
+      return auth.$createUserWithEmailAndPassword(user.email, user.password);
+
+    }
   }
 })();
