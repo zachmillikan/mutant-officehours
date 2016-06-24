@@ -14,6 +14,7 @@
       register: register,
       login: login,
       logout: logout,
+      isLoggedIn: isLoggedIn,
     };
 
     return service;
@@ -30,6 +31,10 @@
 
     function logout() {
       auth.$signOut();
+    }
+
+    function isLoggedIn() {
+      return auth.$getAuth();
     }
   }
 })();
