@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="app/content/css/app.css">
   </head>
   <body>
-    <div ng-controller="AuthController as vm" class="top-bar" id="main-menu">
+    <!-- <div ng-controller="AuthController as vm" class="top-bar" id="main-menu">
          <div class="top-bar-left">
            <ul class="dropdown menu" data-dropdown-menu>
              <li><a ui-sref="home" class="menu-text">Mutant School</a></li>
@@ -19,8 +19,11 @@
              <li><a href="#" ng-click="vm.logout()" ng-show="vm.isLoggedIn()">Log out</a></li>
            </ul>
          </div>
-       </div>
-    <div ui-view class="row" id="main"></div>
+       </div> -->
+
+    <xt-navbar></xt-navbar>
+
+    <!-- <div ui-view class="row" id="main"></div> -->
 
     <!-- Third-party scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -52,6 +55,7 @@
 
     <!-- layout module -->
     <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/navbar.directive.js"></script>
 
     <!-- mutantList module -->
     <script src="app/mutantList/mutantList.module.js"></script>
