@@ -9,7 +9,6 @@
 
   function AuthController($firebaseAuth, $state, authService) {
     var vm = this;
-    var auth = $firebaseAuth();
 
     vm.register = register;
     vm.login = login;
