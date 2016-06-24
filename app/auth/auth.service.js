@@ -13,6 +13,7 @@
     var service = {
       register: register,
       login: login,
+      logout: logout,
     };
 
     return service;
@@ -25,6 +26,10 @@
 
     function login(user) {
       return auth.$signInWithEmailAndPassword(user.email, user.password);
+    }
+
+    function logout() {
+      auth.$signOut();
     }
   }
 })();
