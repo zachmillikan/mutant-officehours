@@ -20,6 +20,6 @@
     }
     resolveUser.$inject = ['authService']
     function resolveUser(authService) {
-      return authService.auth.$requireSignIn();
+    return authService.auth.$requireSignIn();
     }
 })();
