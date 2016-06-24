@@ -15,6 +15,7 @@
       login: login,
       logout: logout,
       isLoggedIn: isLoggedIn,
+      auth: auth,
     };
 
     return service;
