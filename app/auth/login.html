@@ -5,35 +5,8 @@
      <div class="column log-in-form">
        <h4 class="text-center">Log in</h4>
 
-       <!-- Server Authentication Errors -->
-       <div class="callout alert small" ng-show="vm.error" ng-bind="vm.error">
-       </div>
+        <xt-auth-form></xt-auth-form>
 
-       <label>Email
-         <input ng-model="vm.user.email"
-                ng-model-options="{updateOn: 'default blur', debounce: {
-                  'default': 1000, 'blur': 0 } }" 
-                type="email" name="email"
-                placeholder="somebody@example.com"
-                required autofocus>
-       </label>
-
-       <!-- Email errors -->
-       <div class="callout alert small" ng-show="authForm.$submitted && authForm.email.$error.required">
-         Email can't be blank
-       </div>
-       <div class="callout small alert" ng-show="authForm.$submitted && authForm.email.$error.email">
-         Email is formatted incorrectly
-       </div>
-
-       <label>Password
-         <input ng-model="vm.user.password" type="password" name="password" placeholder="Password" required>
-       </label>
-
-       <!-- Password errors -->
-       <div class="callout small alert" ng-show="authForm.$submitted && authForm.password.$error.required">
-         Password can't be blank
-       </div>
       <p><button type="submit" class="button expanded">Log in</button></p>
      </div>
    </form>
